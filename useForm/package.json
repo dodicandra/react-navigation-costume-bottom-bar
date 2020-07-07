@@ -1,8 +1,12 @@
 {
   "name": "my-useform",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "license": "MIT",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
   "dependencies": {
     "react": "^16.13.1",
     "typescript": "^3.9.6"
