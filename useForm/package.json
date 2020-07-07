@@ -1,10 +1,10 @@
 {
   "name": "my-useform",
-  "version": "1.0.5",
-  "main": "dist/index.ts",
+  "version": "1.0.6",
+  "main": "index.ts",
   "license": "MIT",
   "source": "index.ts",
-  "types": "dist/index.ts",
+  "types": "index.ts",
   "scripts": {
     "build": "tsc",
     "prebuild": "npm run clean"
