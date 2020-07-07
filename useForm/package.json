@@ -1,14 +1,17 @@
 {
   "name": "my-useform",
-  "version": "1.0.4",
-  "main": "index.js",
+  "version": "1.0.5",
+  "main": "dist/index.ts",
   "license": "MIT",
-  "types": "index.d.ts",
+  "source": "index.ts",
+  "types": "dist/index.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prebuild": "npm run clean"
   },
-  "dependencies": {
+  "devDependencies": {
     "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "typescript": "^3.9.6"
   }
 }
