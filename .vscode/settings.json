@@ -1,0 +1,25 @@
+{
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "search.exclude": {
+    "/node_modules": true,
+    "/yarn.lock": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/node_modules": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "/node_modules/*/**": true,
+    "/node_modules": true
+  },
+  "editor.renameOnType": true,
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingOvertype": "always",
+}
