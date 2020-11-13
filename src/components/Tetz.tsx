@@ -13,5 +13,6 @@ export const Container = styled.TouchableOpacity<ContainerTypes>`
   border-radius: 6px;
   overflow: hidden;
   margin: 10px ${(props) => props.marginHorizontal}px;
-  elevation: 3;
 `;
+
+export const Constrain = styled(Container)<{ jk: string }>``;

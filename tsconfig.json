@@ -6,6 +6,11 @@
       "dom",
       "esnext"
     ],
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin"
+      }
+    ],
     "moduleResolution": "node",
     "importHelpers": true,
     "noEmit": true,

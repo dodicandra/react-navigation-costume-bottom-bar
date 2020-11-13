@@ -2,9 +2,11 @@ import LottieView from 'lottie-react-native';
 import React, { useRef, forwardRef, RefObject } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
-interface Props {}
+interface Props {
+  tes: string;
+}
 
-const Lottie: React.FC<Props> = () => {
+const Lottie: React.FC<Props> = ({ tes }) => {
   const lotieRef = useRef<LottieView>(null);
 
   return (
@@ -22,7 +24,9 @@ const Lottie: React.FC<Props> = () => {
   );
 };
 
-export default Lottie;
+const LottieMemo = React.memo(Lottie);
+
+export default LottieMemo;
 
 const styles = StyleSheet.create({
   lottie: {

@@ -15,7 +15,7 @@ interface HeaderProps {
   title?: 'aku' | 'kamu';
 }
 
-const Header = (props: HeaderProps) => {
+const Header: React.FC<HeaderProps> = (props) => {
   const [data, setData] = useState<boolean>(false);
 
   const pressed = () => {
