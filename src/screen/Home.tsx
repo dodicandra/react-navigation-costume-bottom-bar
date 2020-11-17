@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { PopUp } from 'components/PopUp';
 
@@ -29,7 +30,7 @@ export default function Home() {
   const tabBarHeight = useBottomTabBarHeight();
   const onScroll = Animated.event<NativeSyntheticEvent<NativeScrollEvent>>(
     [{ nativeEvent: { contentOffset: { y: translateY } } }],
-    { useNativeDriven: true }
+    { useNativeDriven: false }
   );
 
   const presed = () => {
@@ -37,29 +38,36 @@ export default function Home() {
     alert('haloo');
   };
 
+  console.log(tabBarHeight);
   return (
-    <View style={styles.container}>
-      <ScrollView style={{ flex: 1, paddingBottom: tabBarHeight + 20 }}>
-        {[...data, ...data, ...data].map((value) => (
-          <TouchableOpacity
-            key={value.id}
-            style={{
-              backgroundColor: '#7bc8f0',
-              flex: 1,
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginVertical: 30,
-              borderRadius: 14,
-            }}
-            onPress={() => modal.current?.onSow()}
-          >
-            <Text style={{ marginVertical: 200 }}>Open Modal</Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={{ flex: 1 }}
+          contentContainerStyle={{ paddingBottom: tabBarHeight }}
+        >
+          {[...data, ...data].map((value) => (
+            <TouchableOpacity
+              key={value.id + Math.random() * 3423}
+              style={{
+                backgroundColor: '#7bc8f0',
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center',
+                marginVertical: 30,
+                borderRadius: 14,
+              }}
+              onPress={() => modal.current?.onSow()}
+            >
+              <Text style={{ marginVertical: 200 }}>Open Modal</Text>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
 
-      <PopUp ref={modal} />
-    </View>
+        <PopUp ref={modal} />
+      </View>
+    </SafeAreaView>
   );
 }
 
