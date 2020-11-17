@@ -2,10 +2,7 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "jsx": "react-native",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "lib": ["dom", "esnext"],
     "plugins": [
       {
         "name": "typescript-styled-plugin"
@@ -20,12 +17,6 @@
     "strict": true,
     "allowJs": true,
     "module": "commonjs",
-    "target": "ESNext",
-    "baseUrl": "./src",
-    "paths": {
-      "components": [
-        "./components"
-      ]
-    }
-  },
+    "target": "ESNext"
+  }
 }

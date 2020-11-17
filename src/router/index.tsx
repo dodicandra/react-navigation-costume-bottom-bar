@@ -1,14 +1,12 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 
-import MyTabBar from 'components/BottomNav';
-import Detail from 'screen/Detail';
-import History from 'screen/History';
-import Home from 'screen/Home';
-import Profile from 'screen/Profile';
-import Setting from 'screen/Setting';
-
-interface Props {}
+import MyTabBar from '../components/BottomNav';
+import Detail from '../screen/Detail';
+import History from '../screen/History';
+import Home from '../screen/Home';
+import Profile from '../screen/Profile';
+import Setting from '../screen/Setting';
 
 const { Screen, Navigator } = createBottomTabNavigator();
 

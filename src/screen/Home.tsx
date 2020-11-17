@@ -1,3 +1,4 @@
+import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import React, { useRef } from 'react';
 import {
   FlatList,
@@ -11,10 +12,9 @@ import {
   View,
 } from 'react-native';
 import Animated from 'react-native-reanimated';
-import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { PopUp } from 'components/PopUp';
+import { PopUp } from '../components/PopUp';
 
 interface DataFlat {
   id: number;
