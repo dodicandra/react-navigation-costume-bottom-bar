@@ -17,6 +17,7 @@
     "strict": true,
     "allowJs": true,
     "module": "commonjs",
-    "target": "ESNext"
+    "target": "ESNext",
+    "noImplicitAny": false
   }
 }
