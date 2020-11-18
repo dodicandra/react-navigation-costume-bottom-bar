@@ -12,7 +12,6 @@ interface StaticComponent<TProps = {}> extends React.FC<TProps> {
 }
 
 const Detail: StaticComponent<Props> = ({ text, navigation }) => {
-  navigation.navigate('Home');
   return (
     <View>
       <Text>{text}</Text>

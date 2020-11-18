@@ -32,7 +32,7 @@ export default function MyTabBar({ state, descriptors, navigation, style, tabSty
   return (
     <View removeClippedSubviews style={[tabStyle, style]}>
       <Svg fill="none" width={width} style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }} height={60}>
-        <Path fill={Color.backgroundDark} d={d} />
+        <Path fill={Color.BackgroundDark} d={d} />
       </Svg>
       <View
         style={{
@@ -73,7 +73,7 @@ export default function MyTabBar({ state, descriptors, navigation, style, tabSty
           };
 
           const isDetail = route.name === 'Detail';
-
+          const focused = isFocused ? Color.BackgroundLight1 : Color.BorderGrey;
           return (
             <TouchableOpacity
               key={route.name}
@@ -88,7 +88,7 @@ export default function MyTabBar({ state, descriptors, navigation, style, tabSty
                 justifyContent: 'center',
                 alignItems: 'center',
                 marginHorizontal: 10,
-                backgroundColor: isDetail ? Color.backgroundDark : 'transparent',
+                backgroundColor: isDetail ? Color.BackgroundDark : 'transparent',
                 width: isDetail ? 50 : undefined,
                 height: isDetail ? 50 : undefined,
                 borderRadius: isDetail ? 50 / 2 : undefined,
@@ -96,23 +96,15 @@ export default function MyTabBar({ state, descriptors, navigation, style, tabSty
               }}
             >
               {isDetail ? (
-                <SimpleLineIcons
-                  name="handbag"
-                  size={20}
-                  color={isFocused ? Color.backgroundLight1 : Color.borderGrey}
-                />
+                <SimpleLineIcons name="handbag" size={20} color={focused} />
               ) : route.name === 'History' ? (
-                <Entypo name="wallet" size={25} color={isFocused ? Color.backgroundLight1 : Color.borderGrey} />
+                <Entypo name="wallet" size={25} color={focused} />
               ) : route.name === 'Profile' ? (
-                <Feather name="user" size={25} color={isFocused ? Color.backgroundLight1 : Color.borderGrey} />
+                <Feather name="user" size={25} color={focused} />
               ) : route.name === 'Love' ? (
-                <AntDesign name="heart" size={25} color={isFocused ? Color.backgroundLight1 : Color.borderGrey} />
+                <AntDesign name="heart" size={25} color={focused} />
               ) : (
-                <AntDesign
-                  name={route.name.toLowerCase()}
-                  size={25}
-                  color={isFocused ? Color.backgroundLight1 : Color.borderGrey}
-                />
+                <AntDesign name={route.name.toLowerCase()} size={25} color={focused} />
               )}
             </TouchableOpacity>
           );

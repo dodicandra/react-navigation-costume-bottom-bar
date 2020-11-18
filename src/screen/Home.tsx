@@ -12,7 +12,6 @@ import {
   View,
 } from 'react-native';
 import Animated from 'react-native-reanimated';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { PopUp } from '../components/PopUp';
 import { Color } from '../types';
@@ -72,7 +71,7 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Color.backgroundLight1,
+    backgroundColor: Color.BackgroundLight1,
     marginHorizontal: 10,
     paddingHorizontal: 5,
   },
