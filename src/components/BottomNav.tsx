@@ -2,7 +2,8 @@ import { BottomTabBarOptions, BottomTabBarProps } from '@react-navigation/bottom
 import * as React from 'react';
 import { Dimensions, Text, TouchableOpacity, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
-import { AntDesign, Feather, FontAwesome5 } from '@expo/vector-icons';
+import { AntDesign, Feather, SimpleLineIcons, Entypo } from '@expo/vector-icons';
+import { Color } from '../types';
 
 type TabBarProps = BottomTabBarProps<BottomTabBarOptions>;
 
@@ -14,9 +15,9 @@ const d = `
 M 0 ${height} 
 V 0
 H ${width * 0.36} 
-Q ${width * 0.42} 0 ${width * 0.43} ${v * 2} 
-A 50 120 0 0 0 ${width * 0.57} ${v * 2}
-Q ${width * 0.59} 0 ${width * 0.62} 0
+Q ${width * 0.41} 0 ${width * 0.41} ${v * 2} 
+A 5 5 0 1 0 ${width * 0.59} ${v * 2}
+Q ${width * 0.59} 0 ${width * 0.63} 0
 H ${width}
 V ${height}
 H 0 Z
@@ -31,7 +32,7 @@ export default function MyTabBar({ state, descriptors, navigation, style, tabSty
   return (
     <View removeClippedSubviews style={[tabStyle, style]}>
       <Svg fill="none" width={width} style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }} height={60}>
-        <Path fill="#f1f1f1" d={d} />
+        <Path fill={Color.backgroundDark} d={d} />
       </Svg>
       <View
         style={{
@@ -87,21 +88,31 @@ export default function MyTabBar({ state, descriptors, navigation, style, tabSty
                 justifyContent: 'center',
                 alignItems: 'center',
                 marginHorizontal: 10,
-                backgroundColor: isDetail ? '#f1f1f1' : 'transparent',
+                backgroundColor: isDetail ? Color.backgroundDark : 'transparent',
                 width: isDetail ? 50 : undefined,
                 height: isDetail ? 50 : undefined,
                 borderRadius: isDetail ? 50 / 2 : undefined,
-                top: isDetail ? -30 : undefined,
+                top: isDetail ? -12 : undefined,
               }}
             >
               {isDetail ? (
-                <AntDesign name="scan1" size={30} color={isFocused ? '#121849' : '#b4b4b4'} />
+                <SimpleLineIcons
+                  name="handbag"
+                  size={20}
+                  color={isFocused ? Color.backgroundLight1 : Color.borderGrey}
+                />
               ) : route.name === 'History' ? (
-                <FontAwesome5 name="history" size={30} color={isFocused ? '#121849' : '#b4b4b4'} />
+                <Entypo name="wallet" size={25} color={isFocused ? Color.backgroundLight1 : Color.borderGrey} />
               ) : route.name === 'Profile' ? (
-                <Feather name="user" size={30} color={isFocused ? '#121849' : '#b4b4b4'} />
+                <Feather name="user" size={25} color={isFocused ? Color.backgroundLight1 : Color.borderGrey} />
+              ) : route.name === 'Love' ? (
+                <AntDesign name="heart" size={25} color={isFocused ? Color.backgroundLight1 : Color.borderGrey} />
               ) : (
-                <AntDesign name={route.name.toLowerCase()} size={30} color={isFocused ? '#121849' : '#b4b4b4'} />
+                <AntDesign
+                  name={route.name.toLowerCase()}
+                  size={25}
+                  color={isFocused ? Color.backgroundLight1 : Color.borderGrey}
+                />
               )}
             </TouchableOpacity>
           );

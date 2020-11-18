@@ -6,7 +6,7 @@ import Detail from '../screen/Detail';
 import History from '../screen/History';
 import Home from '../screen/Home';
 import Profile from '../screen/Profile';
-import Setting from '../screen/Setting';
+import Love from '../screen/Setting';
 
 const { Screen, Navigator } = createBottomTabNavigator();
 
@@ -27,8 +27,8 @@ export const BottomNavigation = () => {
       <Screen name="Home" component={Home} />
       <Screen name="History" component={History} />
       <Screen name="Detail" component={Detail} />
+      <Screen name="Love" component={Love} />
       <Screen name="Profile" component={Profile} />
-      <Screen name="Setting" component={Setting} />
     </Navigator>
   );
 };

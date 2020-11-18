@@ -15,6 +15,7 @@ import Animated from 'react-native-reanimated';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { PopUp } from '../components/PopUp';
+import { Color } from '../types';
 
 interface DataFlat {
   id: number;
@@ -38,44 +39,42 @@ export default function Home() {
     alert('haloo');
   };
 
-  console.log(tabBarHeight);
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={styles.container}>
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          style={{ flex: 1 }}
-          contentContainerStyle={{ paddingBottom: tabBarHeight }}
-        >
-          {[...data, ...data].map((value) => (
-            <TouchableOpacity
-              key={value.id + Math.random() * 3423}
-              style={{
-                backgroundColor: '#7bc8f0',
-                flex: 1,
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginVertical: 30,
-                borderRadius: 14,
-              }}
-              onPress={() => modal.current?.onSow()}
-            >
-              <Text style={{ marginVertical: 200 }}>Open Modal</Text>
-            </TouchableOpacity>
-          ))}
-        </ScrollView>
+    <View style={styles.container}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ flex: 1 }}
+        contentContainerStyle={{ paddingBottom: tabBarHeight }}
+      >
+        {[...data, ...data].map((value) => (
+          <TouchableOpacity
+            key={value.id + Math.random() * 3423}
+            style={{
+              backgroundColor: '#7bc8f0',
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginVertical: 30,
+              borderRadius: 14,
+            }}
+            onPress={() => modal.current?.onSow()}
+          >
+            <Text style={{ marginVertical: 200 }}>Open Modal</Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
 
-        <PopUp ref={modal} />
-      </View>
-    </SafeAreaView>
+      <PopUp ref={modal} />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Color.backgroundLight1,
     marginHorizontal: 10,
+    paddingHorizontal: 5,
   },
   safeArea: {
     height: 50,
